@@ -1,2 +1,2 @@
-# uberSMS
+# rideText
 Request Ubers through SMS
