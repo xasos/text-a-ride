@@ -1,2 +1,2 @@
-require './hello'
+require './sms-quickstart'
 run Sinatra::Application
