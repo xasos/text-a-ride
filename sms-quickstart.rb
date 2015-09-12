@@ -24,6 +24,10 @@ friends.each do |key, value|
   puts "Sent message to #{value}"
 end
 
+get '/' do
+  "Welcome to rideText"
+end
+
 get '/sms-quickstart' do
   session["counter"] ||=0
   sms_count = session["counter"]
