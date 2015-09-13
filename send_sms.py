@@ -48,6 +48,7 @@ def hello():
     response_details = request.values
     body = str(response_details.getlist('Body')[0])
     #pdb.set_trace()
+# message to use shortcodes and description in beginning
 
     if counter == 0:
       resp.message(messages[0])
@@ -57,6 +58,9 @@ def hello():
     if counter == 1:
       address = body
       latitude_longitude(address)
+      pdb.set_trace()
+      print(latitude)
+      print(longitude)
       counter = 2
       resp.message(messages[2])
       print(uber.get_products(latitude, longitude))
