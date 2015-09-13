@@ -57,7 +57,7 @@ def hello():
 
     if counter == 0:
       resp.message(messages[0])
-    if counter == 3
+    if counter == 3:
       destination = body
       dest_coords = latitude_longitude(destination)
       latitude = dest_coords[0]
