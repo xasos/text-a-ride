@@ -57,10 +57,9 @@ def hello():
       resp.message(messages[3])
     if counter == 1:
       address = body
-      latitude_longitude(address)
-      pdb.set_trace()
-      print(latitude)
-      print(longitude)
+      coords = latitude_longitude(address)
+      latitude = coords[0]
+      longitude = coords[1]
       counter = 2
       resp.message(messages[2])
       print(uber.get_products(latitude, longitude))
@@ -78,8 +77,7 @@ def local_ubers(latitude, longitude):
 
 def latitude_longitude(address):
   location = geolocator.geocode(address)
-  latitude = location.latitude
-  longitude = location.longitude
+  return [location.latitude, location.longitude]
 
 def uber_status():
   return 3
