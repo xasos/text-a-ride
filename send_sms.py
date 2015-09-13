@@ -52,12 +52,14 @@ def hello():
     if counter == 0:
       resp.message(messages[0])
     if counter == 2:
-      selected_uber = response_details.getlist('Body')
+      selected_uber = body
       resp.message(messages[3])
     if counter == 1:
-      address = response_details.getlist('Body')
+      address = body
+      latitude_longitude(address)
       counter = 2
       resp.message(messages[2])
+      print(uber.get_products(latitude, longitude))
     if body.lower() == "request":
       resp.message(messages[1])
       counter = 1
@@ -67,11 +69,13 @@ def hello():
       uber_status
     return str(resp)
 
-def get_local_ubers(latitude, longitude):
-    return uber.get_products(latitude, longitude)
+def local_ubers(latitude, longitude):
+  return uber.get_products(latitude, longitude)
 
 def latitude_longitude(address):
-  return 3
+  location = geolocator.geocode(address)
+  latitude = location.latitude
+  longitude = location.longitude
 
 def uber_status():
   return 3
