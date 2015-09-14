@@ -8,8 +8,8 @@ import pdb
 SECRET_KEY = "asdfasdfasdf"
 
 # Your Account Sid and Auth Token from twilio.com/user/account
-account_sid = "AC50a25b43c9f2c9a844fe0e06a6349303"
-auth_token  = "bfdcce4ecda50fa055876750bb165676"
+account_sid = ""
+auth_token  = ""
 client = TwilioRestClient(account_sid, auth_token)
 
 counter = 0
@@ -35,7 +35,7 @@ keywords = [
 "cancel"
 ]
 
-uber = Uber("gnccLgkxBcZJMca3pp9mydlSYaATAAFF", "VxhO24omuwWB-2zy3FXbCjJbpshGokmWdyjffQLY", "hKA5OENDNCaEKPFZDlqbI-YxkeRFbt7DazOVZMK_")
+uber = Uber("", "", "")
 
 geolocator = Nominatim()
 app = Flask(__name__)
